@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./img/favicon.ico">
+  <link rel="stylesheet" href="animes.css">
+  <link rel="stylesheet" href="reset.css">
+  <title>アニメ『【推しの子】』公式サイト</title>
+  <meta name="description" content="「この芸能界において嘘は武器だ」赤坂アカ×横槍メンゴの豪華タッグが全く新しい切り口で”芸能界”を描く衝撃作、ついにアニメ化決定！" />
+  <meta name="keywords" content="赤坂アカ,横槍メンゴ,推しの子,ヤングジャンプ,星野アイ,ジャンプ+" />
+</head>
+<!-- loading Start -->
+<div class="loading">
+  <div class="loading_bg">
+    <img class="loading_txt" src="./img/logo.png">
+  </div>
+  <img class="loading_catch" src="./img/kv_catch.png">
+  <img class="loading_kv" src="./img/opkv_loading.jpg">
+  <img class="loading_color" src="./img/opkv.jpg">
+</div>
+<!-- loading End -->
+
+<body>
+  <div class="body">
+      <!-- humburger_menu Start -->
+      <div id="navArea">
+        <nav>
+          <div class="inner">
+            <div class="innerImg-top">
+              <img src="img/logo.png">
+            </div>
+
+            <ul>
+              <li><a href="https://ichigoproduction.com/news/">>News</a></li>
+              <li><a href="https://ichigoproduction.com/onair/">>ON AIR</a></li>
+              <li><a href="https://ichigoproduction.com/staffcast/">>STAFF/CAST</a></li>
+              <li><a href="https://ichigoproduction.com/story/11.html">>STORY</a></li>
+              <li><a href="https://ichigoproduction.com/chara/">>CHARACTER</a></li>
+              <li><a href="https://ichigoproduction.com/talent/">>TALENT</a></li>
+              <li><a href="https://ichigoproduction.com/event/">EVENT</a></li>
+              <li><a href="https://eigakan.org/theaterpage/schedule.php?t=oshinokomotherandchildren">>THEATER</a></li>
+              <li><a class="humburgerMenuDelete" href="https://ichigoproduction.com/novelty/">>NOVELTY</a></li>
+              <li><a class="humburgerMenuDelete" href="https://ichigoproduction.com/goods/">>GOODS</a></li>
+              <li><a class="humburgerMenuDelete" href="https://ichigoproduction.com/bd/">>Blu-ray＆DVD</a></li>
+              <!-- <li><a href="#">>MUSIC</a></li>
+              <li><a href="#">>MOVE</a></li>
+              <li><a href="#">>BOOKS</a></li>
+              <li><a href="#">>SPECIAL</a></li> -->
+            </ul>
+          </div>
+        </nav>
+        <div class="humburger-btn">
+          <div class="toggle-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="mask"></div>
+      </div>
+      <!-- humburger_menu End -->
+
+      <!-- gallrySite Start -->
+      <!-- center display:flex;
+        flex-end
+
+      -->
+      <!-- aspect-ratio 親要素
+        background:画像のURL;
+        親要素と同じ比率で
+        background-size:contain;
+        contain:;
+
+      -->
+      <div class="center">
+        <img src="./img/kv.webp" class="bigimg">
+        <div class="img" id="img-container">
+          <!-- list 正方形 画像 overflow:hidon; object-fit:cover;背景を幅で広げる -->
+          <img src="./img/kv.webp" class="thumb active" data-image="./img/kv.webp">
+          <img src="./img/kv5.webp" class="thumb" data-image="./img/kv5.webp">
+          <img src="./img/kv6.webp" class="thumb" data-image="./img/kv6.webp">
+        </div>
+      </div>
+
+      <!-- gallerySite End -->
+
+      <!-- Youtube Start -->
+
+        <!-- 既存のコンテンツ -->
+        <!-- Youtube modalWindow -->
+      <div class="background modalImg" onclick="openModal()">
+        <div id="player"></div>
+        <img class="playButton" src="./img/playBt.png">
+      </div>
+
+      <!-- モーダルウィンドウの背景 -->
+      <div id="modalBackdrop"></div>
+
+      <!-- モーダルウィンドウのコンテンツ -->
+      <div id="modal">
+        <button id="closeButton" onclick="closeModal()">閉じる</button>
+        <iframe id="youtubeIframe" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+
+    <!-- Youtube End -->
+
+    <!-- bottom Start -->
+    <div class="bottom">
+      <div class="bottom-info">
+        <img src="img/kirakira_left.png">
+        <h1 class="bottom-text shadow">INFORMATION</h1>
+        <img src="img/kirakira_left.png">
+      </div>
+
+      <div class="bottom-flex">
+        <div>
+          <!-- News -->
+          <h1 class="bottom-h1 shadow">NEWS</h1><br>
+          <div class="bottom-left">
+            <div class="info-news">
+              <div class="bottom-wrap">
+                <h1 class="bottomDay">2023/07/07</h1>
+                <a class="bottom-link" href="https://ichigoproduction.com/bd/02.html">Blu-ray＆DVD 2 ジャケット公開！</a>
+              </div>
+              <div class="bottom-wrap">
+                <h1 class="bottomDay">2023/07/05</h1>
+                <a class="bottom-link" href="https://ichigoproduction.com/news/index00700000.html">カネヨ石鹸 重曹ちゃん本体【推しの子】モデル 本日７/５より販売開始！！</a>
+              </div>
+              <div class="bottom-wrap">
+                <h1 class="bottomDay">2023/06/28</h1>
+                <a class="bottom-link" href="https://ichigoproduction.com/news/index00690000.html">第2期制作決定。 第2期制作決定特報映像を公開。</a>
+              </div>
+              <div class="bottom-wrap">
+                <h1 class="bottomDay">2023/06/27</h1>
+                <a class="bottom-link" href="https://ichigoproduction.com/event/">TVアニメ『【推しの子】』スペシャルイベント 苺プロダクション☆ファン感謝祭2023開催時間決定！</a>
+              </div>
+              <div class="bottom-wrap">
+                <h1 class="bottomDay">2023/06/27</h1>
+                <a class="bottom-link" href="https://ichigoproduction.com/story/11.html">第十一話のあらすじ＆先行カットを公開。</a>
+              </div>
+              <div class="bottom-wrap bottom-wrap-delete">
+                <h1 class="bottomDay">2023/06/23</h1>
+                <a class="bottom-link" href="https://ichigoproduction.com/news/index00650000.html">アプリゲーム『逆転オセロニア』とTVアニメ【推しの子】のコラボを開催中！</a>
+              </div>
+              <div class="bottom-wrap bottom-wrap-delete">
+                <h1 class="bottomDay">2023/06/20</h1>
+                <a class="bottom-link" href="https://ichigoproduction.com/story/10.html">第十話のあらすじ＆先行カットを公開。</a>
+              </div>
+              <div class="morePink">
+                【
+                <a href="https://ichigoproduction.com/news/">MORE</a>
+                】
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- Twitter API -->
+          <h1 class="bottom-h1 shadow">OFFICIAL Twitter</h1><br>
+          <div class="bottom-right">
+            <a class="twitter-timeline" height="600" href="https://twitter.com/anime_oshinoko?ref_src=twsrc%5Etfw">Tweets by anime_oshinoko</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- bottom End -->
+    <div class="footer">
+      <div class="footer-img">
+        <a href="https://www.special-contents.com/oshinoko/">
+          <img class="footerImg-top" src="img/002.jpg">
+        </a>
+        <a href="https://youngjump.jp/oshinoko/">
+          <img class="footerImg-top" src="img/004.jpg">
+        </a>
+      </div>
+      <a href="https://ichigoproduction.com/">
+        <img class="footerImg-bottom" src="img/logo.png">
+      </a>
+      <h1>©赤坂アカ×横槍メンゴ／集英社・【推しの子】製作委員会</h1>
+    </div>
+  </div>
+  <script src="animes.js"></script>
+
+</body>
+</html>

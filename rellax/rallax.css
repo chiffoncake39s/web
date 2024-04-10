@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSSの初期化 */
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* クラスbox */
+.box1{
+    height:100vh;
+    width:100%;
+    background-image: url(./img/spring.jpg);
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+.box2{
+    height:100vh;
+    width:100%;
+    background-image: url(./img/summer.jpg);
+    background-size: cover;
+    background-position: center;
+    display: table;
+}
+.box3{
+    height:100vh;
+    width:100%;
+    background-image: url(./img/autumn.jpg);
+    background-size: cover;
+    background-position: center;
+    display: table;
+    background-attachment: fixed;
+}
+.box4{
+    height:100vh;
+    width:100%;
+    background-image: url(./img/winter.jpg);
+    background-size: cover;
+    background-position: center;
+    display:table;
+    background-attachment: fixed;
+}
+/* 文字 */
+h2{
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+    /* 親のテーブルの真ん中にする */
+    display: table-cell;
+    vertical-align: middle;
+}

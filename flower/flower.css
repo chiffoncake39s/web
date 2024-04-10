@@ -1,0 +1,142 @@
+@charset "UTF-8";
+body{
+  color:#fff;
+  background-color: #000;
+}
+a{
+  color:#fff;
+  text-decoration: none;
+}
+ul{
+  padding-left: 0;
+}
+li::marker{
+  list-style: none;
+}
+.site-title,#infomation,#gallery h2,#access,#contact{
+  text-align: center;
+}
+#mainvisual{
+  display:flex;
+  /* 要素の中心に合わせる */
+  justify-content: center;
+  /* 要素がはみ出た時に切り取る */
+  overflow-x: hidden;
+}
+#mainvisual img{
+  width:33.33%;
+}
+.site-title{
+  font-size: 6.25rem;
+}
+/* information ここから */
+section#infomation\ text1{
+  max-width:800px;
+}
+#information{
+  max-width: 800px;
+  text-align: center;
+  margin:auto;
+}
+.info-date-en{
+  font-size: 1.5rem;
+}
+.info-time-en,.info-date-ja{
+  font-size: 1.125rem;
+}
+.info-place{
+  font-size: 2.5rem;
+  margin:20px 0;
+}
+/* information ここまで */
+/* gallery ここから*/
+.section-title{
+  font-size: 3.75rem;
+  margin-top: 140px;
+}
+#gallery{
+  max-width: 800px;
+  margin:0 auto;
+  margin-bottom: 480px;
+}
+/*#gallery img{
+
+}*/
+.right{
+  text-align: right;
+}
+li img.img{
+  width:48%;
+}
+
+
+/*gallery ここまで*/
+/*Access ここから*/
+h2.section-title{
+  font-size:3.5rem;
+  margin-bottom: 45px;
+}
+p.place{
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+p.address{
+  margin-bottom: 20px;
+}
+p.contact{
+  margin-bottom: 35px;
+}
+a.btn{
+  border:solid 1px #fff;
+  padding:15px 82px;
+}
+.button{
+  border:solid 1px #fff;
+  padding:30px 103px;
+}
+.space{
+  margin-bottom: 80px;
+}
+.button1{
+  border:solid 1px #fff;
+  padding:30px 119px;
+}
+.bg{
+  background: url("img/back-ground.jpg")center center!important;
+  height:100vh;
+  width:100vw;
+  position:fixed;
+  top:0;
+  left:0;
+  display:none;
+}
+/*Accessここまで*/
+/* contactここから */
+section#contact{
+  margin-top: 480px;
+}
+
+/* contactここまで */
+footer{
+  margin-top: 250px;
+  border-top:solid 1px #fff;
+  display:flex;
+  justify-content: space-between;
+  padding:80px 30px;
+  align-items: flex-end;
+}
+.footer_width{
+  display:flex;
+}
+.footer_width li{
+  padding-top:30px;
+  padding-right:20px;
+}
+@media(max-width: 900px){
+  #mainvisual img{
+    width:100%;
+  }
+  .site-title,.section-title{
+    font-size: 3.3rem;
+  }
+}

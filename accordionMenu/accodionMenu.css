@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+/* accordionMenu Start */
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+ul, li {
+  list-style: none; /* Remove list-style dots */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 50px auto;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.menu ul{
+  display:none;
+}
+
+.menu ul.active{
+  display:block;
+}
+
+.menu a {
+  transition: 1s;
+}
+
+.menu a:hover {
+  opacity: 0.7;
+}
+
+.menu > li > a {
+  /*display: block;*/
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #ccc;
+}
+
+.menu > li > ul a {
+  padding: 10px;
+  display: block;
+  background-color: #aaa;
+}
+/* accordionMenu End */
+
+
+/* iconAdd Start */
+
+.menu > li > a::after{
+  /* deg = 度 */
+  content:'>';
+  transform: rotate(90deg);
+}
+
+.menu > li > a.active::after{
+  transform: rotate(-90deg) translateY(-3px);
+}
+
+/* iconAdd End */

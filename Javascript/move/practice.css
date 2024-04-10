@@ -1,0 +1,19 @@
+cbody{
+    text-align: center;
+}
+.clicked{
+    background-color:aqua;
+}
+#click:disabled{
+    background-color: darkgray;
+}
+.button{
+    width:120px;
+    height:30px;
+    margin:10px 20px 0px 20px;
+}
+.list-box{
+    background-color: aqua;
+    margin: auto;
+    width:50%;
+}

@@ -1,0 +1,45 @@
+@media screen and (min-width: 481px){
+    body{
+        background-image: url("./img/vis2.png");
+        background-size: cover;
+        /*background-position: center;*/
+        overflow: hidden;
+        background-repeat: no-repeat;
+        /*text-align: center;*/
+    }
+}
+*{
+    margin:0;
+    padding:0;
+}
+.snow{
+    background-color: #FFF;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position:absolute;
+    /* アニメーションをする アニメーション名はsnowFall 10秒かけて linear 真っ直ぐ*/
+    animation:snowFall 10s forwards;
+}
+@keyframes snowFall{
+    /* 開始時に透明度0にする 始まりの位置はtop0 */
+    0%{
+        opacity: 0;
+        top:0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    /* 100%で消える */
+    100%{
+        opacity: 0;
+        top:100vh;
+    }
+}
+.hover p{
+
+    margin:20px;
+}

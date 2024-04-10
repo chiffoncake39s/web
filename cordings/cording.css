@@ -1,0 +1,256 @@
+@charset "utf-8";
+/* レスポンシブwebデザイン
+一般的なウェブサイトはScreenにあたる なので印刷時の見た目を考慮しないといけない時以外は特に指定をしなくても問題ない
+画面サイズが768px以上の時にだけh1の処理が実行される この値が下回らないうちはこの指定が効く
+@media (min-width:768px){
+    h1{
+        font-size:10px;
+    }
+}
+このmaxの間まではこの指定が効きますという意味になる
+@media(max-width:768px){
+    h1{
+        font-size:10px;
+    }
+}
+*/
+/*スクロールをわかりやすくするために*/
+html{
+    scroll-behavior: smooth;
+}
+/* headerここから */
+header{
+    position: fixed;
+    width:100%;
+}
+.header{
+    background-color:#000;
+    color           :#fff;
+    /*text-align   : left;*/
+
+    height          :45px;
+    margin-bottom   :40px;
+
+}
+.header_wrapper{
+    max-width: 1200px;
+    margin:0 auto;
+    padding:0 16px;
+    display: flex;
+}
+#header_title{
+    background-color: #fff;
+}
+header h1{
+    font-size       :26px;
+    /*margin-left     :15.5%;*/
+    padding         :15px 0px;
+}
+header a{
+    padding    :10px 3% 10px 0;
+
+}
+/* headerここまで */
+
+/*pickup ここから*/
+body #pickup{
+    display         :flex;
+    flex-wrap       :wrap;
+    justify-content :space-around;
+}
+#pickup{
+    justify-content: space-between;
+    padding-top: 150px;
+}
+.pickup{
+    width           :32%;
+}
+img{
+    max-width:100%;
+}
+/*#pickup img{
+    height          :210px;
+    width           :373px;
+}*/
+a:hover{
+    text-decoration :none !important;
+}
+div#pickup{
+    max-width           :1200px;
+    margin          :auto;
+}
+div#pickup a{
+    display         :block;
+    text-align      :center;
+}
+div#pickup p{
+    text-align      :left;
+    margin-top      :15px;
+    margin-bottom   :15px;
+}
+/*pickup ここまで*/
+
+/* mainここから */
+main{
+    /*margin-bottom   :120px;
+    flex-wrap: wrap;*/
+    width:65%;
+}
+/*main img{
+    height          :427px;
+    width           :780px;
+    max-width       :100%;
+    height          :auto;
+}*/
+.main h3{
+    /* initial 要素を消す */
+    text-align      :initial;
+}
+
+.main{
+    text-align      :center;
+    /* text-alignはブロック要素には反映されないため インライン要素に対して宣言してあげる必要がある*/
+    /*margin:0px 0px 0px 16%;*/
+    /* display:inline;
+    text-align:center;はinline要素を中央揃えにする
+    例えばpタグなどをdisplay:inline;でinline要素にしてtext-align:center;をかけ中央揃えにすることはできる ただinline要素はサイズの指定ができない
+    width:-px;などで指定してもpタグなどの横幅のサイズが変更にならない
+    pタグなどの横幅のサイズを変更したいならブロック要素にサイズの変更をかけてあげる必要がある
+    */
+}
+div.main{
+    /*max-width           :780px;*/
+    margin          :auto;
+    /*margin:30px;*/
+}
+main h1{
+    font-size       :25px;
+    margin-bottom   :30px;
+    margin-top      :30px;
+    text-align      :initial;
+}
+.main h3{
+    margin          :0;
+}
+main p{
+    color           :#000;
+}
+.main p{
+    /* display:inline-brockはinline要素とブロック要素のいいとこ取り; */
+    display         :inline-block;
+    margin-bottom   :30px;
+}
+    /* aタグの下線を取り除く時やliタグの・を取り除く時に使う
+    text-decoration: none;*/
+/*
+box-shadow: 0 0 8px 4px #ccc;
+boxの周りに影を作って箱っぽくしている
+*/
+/* mainここまで */
+
+/* asideここから */
+aside #profile{
+    height          :130px;
+    width           :130px;
+}
+
+aside{
+    /*margin-left     :35px;*/
+    width           :33%;
+}
+aside p{
+    /*width           :345px;*/
+    padding         :3.5% 2%;
+}
+.Archive p{
+    border-bottom   :solid 1px #777;
+}
+.Archive_title p{
+    display         :inline;
+    border-bottom   :initial;
+}
+
+/* asideここまで */
+/* containerここから    （mainタグとasideタグをまとめた要素) */
+#container{
+    margin:auto;
+    display         :flex;
+    flex-wrap       :wrap;
+}
+div#container{
+    padding:0px 16px;
+    justify-content: space-between;
+    max-width           :1200px;
+    margin          :0 auto;
+    margin-top      :30px;
+}
+
+div#container p{
+    text-align      :justify;
+}
+/* containerここまで */
+
+/* footerここから */
+footer{
+    display         :flex;
+    background-color:#f7f7f7;
+    padding-top     :50px;
+    padding-bottom  :50px;
+}
+
+.item{
+    width:30%;
+    padding:0px 16px;
+}
+.content{
+    max-width:1200px;
+    display         :flex;
+    margin:0 auto;
+    justify-content: space-between;
+}
+div.item ul{
+    padding         :10px 0px;
+    border-top      :solid 1px #777;
+}
+div.item li{
+    list-style      :none;
+    border-bottom   :solid 1px #777;
+    padding         :9px;
+}
+/*footer ここまで*/
+
+@media screen and (max-width: 767px) {
+    /* pickupここから */
+    body #pickup{
+        justify-content: center !important;
+
+    }
+    .pickup{
+        min-width: 100%;
+        padding:0px 16px;
+        display: flex;
+        margin-bottom: 10px;
+        display:block;
+    }
+    main{
+        width:100%;
+        margin-bottom: 30px;
+    }
+
+    div.main{
+        max-width:100%;
+    }
+
+    aside{
+        margin-bottom: 30px;
+        width:100%;
+    }
+    .content{
+        display: initial;
+    }
+    .item{
+        width:100%;
+        margin-bottom: 40px;
+    }
+    /* pickupここまで */
+}

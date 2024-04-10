@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="slide.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .slide {
+      margin: 0 auto;
+      width: 100%; /* Change to 100% for responsiveness */
+      overflow: hidden;
+    }
+
+    .image_box {
+      //スマホサイズの時 後で調整
+      background-size: 1000px auto;
+      //PCサイズの時 後で調整
+      width:100vw;
+      aspect-ratio: 16/12;
+      background-image: url("../picture_scroll/img/chizuru.png");
+      background-repeat: repeat-x;
+      animation: ssAnimePC 20s linear infinite;
+    }
+
+    @keyframes ssAnimePC {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 100% 0;
+      }
+    }
+
+
+
+    .toolbar {
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    #prev,
+    #next {
+      font-size: 50px;
+      padding: 0 30px;
+      border: solid 1px black;
+      height: auto;
+      cursor: pointer;
+    }
+  </style>
+  <title>slide</title>
+</head>
+
+<body>
+  <div class="slide">
+    <div class="image_box">
+      <!-- Remove the img element if not needed -->
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    const images = [
+      "../picture_scroll/img/chizuru.png",
+      "../picture_scroll/img/mami.png",
+      "../picture_scroll/img/ruka.png",
+      "../picture_scroll/img/sumi.png",
+    ];
+
+    let current = 0;
+
+    function changeImage(num) {
+      current = (current + num + images.length) % images.length;
+      // Reset top and left positions before updating the image
+      mainImage.src = images[current];
+    }
+
+
+    const imageElement = document.querySelector(".image_box");
+
+    setInterval(() => {
+      imageElement.style.backgroundImage = `url(${images[current]})`;
+      current = (current + 1) % images.length;
+    }, 3000);
+  </script>
+</body>
+
+</html>

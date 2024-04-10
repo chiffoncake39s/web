@@ -1,0 +1,5 @@
+body{
+    background-image: url("../img/cute.jpg");
+    background-attachment: fixed;
+    max-width: 100%;
+}

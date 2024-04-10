@@ -1,0 +1,588 @@
+@charset "UTF-8";
+/* loading Start */
+.body {
+  display: none;
+}
+img.loading_txt,
+img.loading_catch
+{
+  position: fixed; /* 位置固定 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading-bg{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.loading_bg::before {
+  content: ""; /* コンテンツが必要 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./img/kirakira.png) center top/100%, #fff;
+  animation: bg_scroll 12s linear 0s infinite normal;
+}
+
+@keyframes bg_scroll {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+
+.loading_bg,
+.loading_catch,
+.loading_kv,
+.loading_color
+{
+  display: none;
+}
+@media screen and (max-width:780px){
+  img.loading_kv,
+  img.loading_color {
+
+  /* 画面幅に合わせて拡大表示 */
+  width: 100%;
+  height:110vh;
+  /* 親要素の幅を超えないように制限 */
+  max-width: 100%;
+}
+}
+
+/* loading End */
+
+
+
+
+
+/* gallerySite Start*/
+img.bigimg {
+  /* display:gridで画面幅が変わってもレイアウトを整えてくれる */
+  display:grid;
+  overflow: auto;
+  right: 0;
+  left: 0;
+}
+
+img.thumb {
+  height:80px;
+  width:80px;
+  display: inline-block;
+  filter: brightness(0.5); /* Add this line */
+}
+@media screen and(max-width: 800px){
+  img.thumb {
+    width:31%;
+    display:block;
+  }
+}
+
+.thumb.active {
+  filter: none; /* Add this line */
+}
+
+.img{
+  z-index: 2;
+}
+.center{
+  position:sticky;
+}
+
+/* gallerySite End*/
+
+
+
+
+
+/* media-queryで 600-899 900px background-position:50% 50%;
+ background-size:150%; */
+/* humburger_menu Start */
+
+nav{
+  display: block;
+  position: fixed;
+  background-position: center top 150px;
+  background:
+  url(./img/menu_chara.png) center top/150% no-repeat,
+  url(./img/menu_bg.jpg) center top/100% repeat;
+
+  top:-100%;
+  transition: all 0.5s;
+  opacity:0;
+  width:100%;
+  /*height:100%;*/
+  z-index:0;
+}
+
+/* chara.pngの位置を調整するためのスタイル */
+.chara-image {
+  position: fixed;
+  top: 150px; /* ここを150pxに設定します */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.open nav{
+  top:0;
+  opacity:1;
+  width:100%;
+  height:100%;
+  z-index: 12;
+}
+nav .inner{
+  padding: 25px;
+  width:100%;
+}
+nav .inner ul{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav .inner ul li{
+  margin: 0;
+}
+nav .inner ul li a{
+  display: block;
+  width:220px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  padding:5px;
+  transition-duration: 0.2s;
+  margin: auto;
+  font-size: 35px;
+}
+nav .inner ul li a:hover{
+  opacity:0.4;
+}
+.humburger-btn{
+  top:20px;
+  right:20px;
+  position: fixed;
+  background: #e2007e;
+  width:3rem;
+  height:3rem;
+  z-index: 12;
+  cursor: pointer;
+}
+.toggle-btn{
+  display: block;
+  position: fixed;
+  top:30px;
+  right:30px;
+  width:30px;
+  height:30px;
+  z-index: 12;
+}
+.toggle-btn span{
+  position: absolute;
+  display: block;
+  left:0;
+  width:30px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+.toggle-btn span:nth-child(1){
+  top:4px;
+}
+.toggle-btn span:nth-child(2){
+  top:14px;
+}
+.toggle-btn span:nth-child(3){
+  bottom:4px;
+}
+/* ハンバーガーメニューがクリックされ.openクラスが追加された時の処理 */
+.open .toggle-btn span:nth-child(1){
+  transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle-btn span:nth-child(2){
+  opacity: 0;
+}
+.open .toggle-btn span:nth-child(3){
+  transform: translateY(-10px) rotate(315deg);
+}
+.open .toggle-btn span{
+  background-color: #ffffff;
+}
+.open .humburger-btn{
+  background:none;
+}
+.inner{
+  width:250px;
+  text-align:center;
+}
+.inner::before{
+  content: "";
+  top:0;
+  left:0;
+  right:0;
+  margin: auto;
+  transform: translateY(-50%) rotate(-45deg) skew(25deg, 25deg);
+}
+@media screen and(max-width: 780px){
+  .humburgerMenuDelete{
+    display:none;
+  }
+}
+
+/* humburger_menu End */
+
+
+
+
+
+
+/* youtube Start */
+/* youtubeの高さを設定 */
+.background {
+  position: relative;
+  height: 545px; /* .backgroundの高さを固定値に */
+  max-height:40vw; /* max-height:40vh;にすることでレスポンシブ対応ができる */
+  overflow: hidden;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background>iframe{
+  width:100%;
+  height:100%;
+}
+
+/* youtubeの設置する高さを基準に横幅と高さを設定 */
+
+#player {
+  width: 100%;
+  height: 56.25vw; /* 56.25vwのままにしておく */
+  overflow: hidden;
+  position: absolute;
+  top: 50%; /* 上端を中央に合わせる */
+  left: 0;
+  transform: translateY(-50%); /* 中央揃え */
+  z-index: 0;
+}
+@media screen and(max-width:1200px){
+  #player {
+    height: 75vw; /* 16:9のアスペクト比を保つための計算(100% * 9 / 16 = 56.25%) */
+  }
+}
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 120px;
+  height: 120px;
+}
+
+.playButton:hover {
+  opacity: 0.4;
+}
+.background::after{
+  content:"";
+  background: url(./img/star.png) center / 5%;
+  position:absolute;
+  top:0;
+  left:0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  opacity: 0.5; /* 不透明度を修正 */
+  background-repeat: repeat; /* 背景画像をリピートする */
+}
+
+  /* Youtube modalWindow Start */
+    /* モーダルウィンドウのスタイル */
+    #modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      z-index: 11;
+      width: 100%; /* 画面幅に対するカスタムな幅 */
+      max-width: 1200px; /* 最大幅を設定して画面が大きくなりすぎないようにする */
+      max-height: 600px;
+      padding: 15px; /* モーダルの内側に余白を追加 */
+    }
+    /* モーダルウィンドウの背景 */
+    #modalBackdrop,
+    .humburgerBtnHidden {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height:100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 10;
+    }
+  /* ハンバーガーボタンをモーダルウィンドウでも使えるようにしたい時
+  .humburgerBtnHidden {
+    opacity:0.4;
+  }*/
+  #modal iframe {
+    width: 100%;
+    height:56.25vw;
+    max-height: 660px;
+    /* 16:9のアスペクト比を保つための計算(100% * 9 / 16 = 56.25%) */
+
+  }
+  #closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 0.1rem;
+  }
+  /* Youtube modalWindow End */
+
+/* Youtube End */
+
+
+
+
+
+
+/* Information Start */
+@keyframes infobg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0px -1676px;
+  }
+}
+
+.bottom{
+  height:100%;
+  width:100%;
+  background:linear-gradient(#b844b4a8, #ff6d9ac4);
+  padding: 4em 0 4em;
+  position:relative;
+}.bottom::before{
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:url(./img/bg_kirakira.png);
+  animation: infobg 40s infinite linear;
+  z-index: 0;
+  pointer-events: none;
+}
+/* Information End */
+
+
+
+
+
+
+/* bottom Start */
+.bottom-info{
+  display: flex;
+  align-items:center;
+  max-width: 600px;
+  margin:0 auto;
+  justify-content: center;
+}
+.bottom-info img{
+  height:70px;
+  align-items: end;
+}
+.bottom .bottom-text,.pink-letter{
+  color: white;
+  font-size:60px;
+  text-align: center;
+  margin:40px 0 30px;
+}
+/* Mだけをピンクにするクラスのスタイル */
+.pink-letter {
+  color: #e3007f;
+}
+.bottom-h1{
+  font-size:40px;
+  color:white;
+  margin:0 auto;
+}
+.shadow{
+  text-shadow: 2px 2px 3px #571d2c66,
+  2px 2px 6px #571d2c66,
+  2px 2px 9px #571d2c66;
+}
+.bottom-flex{
+  display:flex;
+  flex-wrap:wrap;
+  text-align: center;
+  max-width:1000px;
+  margin:0 auto;
+  justify-content: space-between;
+}
+
+.bottom-left,.bottom-right{
+  width:480px;
+  height:600px;
+  border-radius: 0.75rem;
+  background:#fff;
+  margin:20px 0 0 0;
+}
+@media screen and (max-width: 780px) {
+  /*
+  flex-wrap:wrap;でTwitterの折り返し。
+  display:block;を設定すると画面幅が綺麗に整う。
+  display:flex;を解除するためにdisplay:blockを設定する。
+  */
+  .bottom-flex{
+    display:block;
+    margin:20px;
+  }
+
+}
+@media screen and (max-width: 400px) {
+  .bottom-wrap-delete{
+    display:none;
+  }
+}
+
+  /* NEWS */
+.info-news{
+  padding:32px;
+}
+.bottom-wrap{
+  border-bottom: dotted 1px #bc3e84;
+  text-align: left;
+  padding: 0.2rem;
+}
+.bottom-wrap a:hover,
+.morePink a:hover{
+  opacity: 0.4;
+}
+.bottomDay{
+  color:#e3007f;
+  margin-bottom:0.25rem ;
+}
+.morePink{
+  color:#d91382;
+  margin-top:20px;
+}
+.morePink a{
+  border-bottom: 1px solid;
+}
+
+  /* official Twitter */
+/* レスポンシブデザイン */
+
+
+@media screen and (max-width: 1000px) {
+  .bottom-info {
+    max-width: 90%; /* 画面幅の90%まで幅を縮小 */
+
+  }
+  .bottom-info img {
+    height: 50px; /* 画面幅に応じてアイコンのサイズを調整 */
+  }
+  .bottom .bottom-text,
+  .pink-letter {
+    font-size: 40px; /* 画面幅に応じてテキストのサイズを調整 */
+  }
+  .bottom-h1 {
+    font-size: 40px; /* 画面幅に応じて見出しのサイズを調整 */
+  }
+
+  .bottom-flex {
+    justify-content: center;
+  }
+  .bottom-left,.bottom-right{
+    width:600px;
+    max-width: 100%;
+    height:600px;
+    border-radius: 0.75rem;
+    background:#fff;
+    margin:20px auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  .bottom-info{
+    width:100%;
+    margin:0;
+  }
+  .bottom-flex {
+    justify-content: center;
+  }
+  .bottom-left,.bottom-right{
+    width:450px;
+    max-width: 100%;
+    height:600px;
+    border-radius: 0.75rem;
+    background:#fff;
+    box-sizing: border-box; /* ボーダーボックスモデルを採用 */
+  }
+}
+
+/* bottom End */
+
+
+
+
+
+
+/* footer Start */
+.footer{
+  text-align: center;
+}
+.footer-img{
+  display:flex;
+  justify-content: center;
+  max-width:1000px;
+  margin:0 auto 2rem;
+  flex-wrap: wrap;
+}
+img.footerImg-top{
+  width:400px;
+  height:150px;
+  border:1px solid #000;
+  margin:10px;
+}
+.innerImg-top img,
+img.footerImg-bottom{
+  width:250px;
+  height:60px;
+  margin-bottom: 40px;
+  background:#fff;
+  overflow-y: hidden;
+}
+img.footerImg-top:hover,
+img.footerImg-bottom:hover{
+  opacity: 0.4;
+}
+@media screen and (max-width: 700px) {
+  .footer-img{
+    width:90%;
+    box-sizing: border-box;
+  }
+}
+/* footer End */

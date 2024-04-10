@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+// Not using brand font, Roboto is close enough to simulate.
+
+/* ネオン風のボタン */
+body{
+	background-color: #333;
+	color: #fff;
+	font-family: 'Roboto', Arial;
+	padding: 10em;
+}
+
+.flex-grid-center {
+	display: flex;
+	justify-content: center;
+	margin: 5em 0;
+}
+
+
+.fuller-button {
+	color: rgba(255,255,255,1);
+	background: none;
+	border-radius: 0;
+	padding: 1.2em 5em;
+	letter-spacing: 0.35em;
+	font-size: 0.7em;
+	transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+	margin: 1em;
+
+	&.blue {
+		box-shadow: inset 0 0 1em rgba(0,170,170,0.5), 0 0 1em rgba(0,170,170,0.5);
+		border: #0dd solid 2px;
+    background-color: #676464;
+	}
+
+	&.blue:hover {
+		background-color: #0dd;
+		box-shadow: inset 0 0 0 rgba(0,170,170,0.5), 0 0 1.5em rgba(0,170,170,0.7);
+	}
+
+	&.red {
+		box-shadow: inset 0 0 1em rgba(251,81,81,0.4), 0 0 1em rgba(251,81,81,0.4);
+		border: #fb5454 solid 2px;
+    background-color: #676464;
+	}
+
+	&.red:hover {
+		background-color: #fb5454;
+		box-shadow: inset 0 0 0 rgba(251,81,81,0.4), 0 0 1.5em rgba(251,81,81,0.6);
+	}
+
+	&.white {
+		box-shadow: inset 0 0 0.8em rgba(255,255,255,0.3), 0 0 0.8em rgba(255,255,255,0.3);
+		border: #fff solid 2px;
+    background-color: #676464;
+	}
+
+	&.white:hover {
+		color: rgba(0,0,0,0.8);
+		background-color: #fff;
+		box-shadow: inset 0 0 0 rgba(255,255,255,0.3), 0 0 1.2em rgba(255,255,255,0.5);
+	}
+}
+
+/* 色々なホバーエフェクト */
+
+@font-face {
+  font-family: 'Neon Glow';
+  src: url(https://assets.codepen.io/230569/NeonGlow-8VLz.ttf);
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: #101010;
+  box-sizing: border-box;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#gasses {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  > * {
+    margin: 2rem;
+  }
+}
+
+.gas {
+  --blur: 1.75rem;
+  --box-blur: calc(0.5 * var(--blur));
+  --glow: var(--color);
+  --size: 12rem;
+
+  align-items: center;
+  border-radius: 12px;
+  border: 4px solid currentColor;
+  box-shadow:
+    /* --- "glass" tube --- */
+    /* inside */ inset 0 0 0 2px rgba(0, 0, 0, 0.15),
+    /* outside */      0 0 0 2px rgba(0, 0, 0, 0.15),
+    /* --- glow --- */
+    /* inside */ inset 0 0 var(--box-blur) var(--glow),
+    /* outside */      0 0 var(--box-blur) var(--glow);
+  color: var(--color, white);
+  display: inline-flex;
+  flex-direction: column;
+  font-family: system-ui, sans-serif;
+  height: var(--size);
+  justify-content: space-around;
+  padding: 1rem;
+  width: var(--size);
+
+  > * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .number {
+    font-weight: 700;
+  }
+
+  .symbol {
+    font-size: 4rem;
+    font-family: 'Neon Glow';
+    text-shadow: 0 0 var(--blur) var(--glow);
+  }
+
+  &.he { --color: #FCEAAC; filter: saturate(175%); }
+  &.ne { --color: #FDA802; filter: brightness(110%); }
+  &.ar { --color: #E555C7; filter: brightness(125%); }
+  &.kr { --color: #B7E7F7; filter: saturate(200%); }
+  &.xe { --color: #C4C4C6; filter: brightness(105%); }
+}

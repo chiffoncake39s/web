@@ -1,0 +1,51 @@
+*{
+  margin: 0;
+  padding:0;
+}
+body{
+  width:100%;
+  height:100vh;
+  background-image: url("../../anime/image/background1.jpg");
+  background-size: cover;
+}
+.menuBar{
+  text-align: center;
+  background-color: #5599c7;
+}
+.menuBar ul li{
+  display: inline-block;
+  width:120px;
+  margin: 0 35px;
+  padding:25px 0;
+  transition: all 0.2s;
+}
+.menuBar ul li a{
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  font-weight: 600px;
+}
+.active,
+.menuBar ul li:hover
+{
+  background-color: #73b5e0;
+}
+.subMenu-1{
+  position: absolute;
+  background-color: #5599c7;
+  margin-top:25px;
+  padding-bottom: 10px;
+  display: none;
+}
+.menuBar ul li:hover .subMenu-1{
+  display: block;
+}
+.menuBar ul li:hover .subMenu-1 ul li{
+  display: block;
+  width:140px;
+  border-bottom:1px dotted;
+  color:#fff;
+}
+.menuBar ul li:hover .subMenu-1 ul li:last-child{
+  border: none;
+}

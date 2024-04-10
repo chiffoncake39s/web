@@ -1,0 +1,13 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:fixed ;
+}
+.body{
+    width: 1200px;
+    margin: auto;
+    color:#fff ;
+}
+h1{
+    font-size:30px;
+}

@@ -1,0 +1,12 @@
+body{
+    /*background-color: paleturquoise;*/
+    background-color: pink;
+}
+#text{
+    background-image: url("img/haikei.jpg"); /*背景の画像*/
+    color:transparent;
+    background-clip: text;
+    -webkit-background-clip:text;
+    font-size: 6rem;
+    font-weight: bold;
+}

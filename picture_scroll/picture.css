@@ -1,0 +1,9 @@
+@keyframes ssAnimePC {
+    from {
+        background-position: left 0 top 0
+    }
+
+    to {
+        background-position: left -2136px top 0
+    }
+}

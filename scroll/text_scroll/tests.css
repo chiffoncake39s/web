@@ -1,0 +1,23 @@
+.pokemon{
+    max-width: 1200px;
+    margin:0 auto;
+}
+.pokemon img{
+    /* margin-auto プロパティはインライン要素に何の効果も発揮しません。<img> タグはインライン要素であるため、ブロックレベル要素に変える必要があります。 */
+    margin:0 auto;
+    display:block;
+    width:600px;
+    height:300px;
+    margin-bottom:800px;
+    object-fit: cover;
+    /*object-fit: contain;*/
+}
+.text{
+    text-align: center;
+}
+.lorem{
+    width:300px;
+    margin:0 auto;
+    display:block;
+    margin-bottom: 100px;
+}
